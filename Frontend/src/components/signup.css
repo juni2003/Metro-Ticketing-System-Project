@@ -1,0 +1,106 @@
+
+.signup-container {
+    background: linear-gradient(45deg, #0e1b2b, #1c3048);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    animation: form-glow 3s ease-in-out infinite alternate;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding */
+}
+
+
+@keyframes form-glow {
+    0% { box-shadow: 0 0 10px rgba(16, 48, 106, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(12, 11, 72, 0.9), 0 0 30px rgba(49, 44, 44, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(41, 3, 136, 0.7); }
+}
+
+
+.form-control {
+    background-color: #152e55;
+    color: #000; 
+    border: 1px solid #fff;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    padding: 10px; 
+}
+
+
+.form-control::placeholder {
+    color: #fff; 
+}
+
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border: 1px solid #ffc107;
+}
+
+
+.form-control:not(:placeholder-shown) {
+    color: #000; 
+}
+
+.form-label {
+    color: #ffc107;
+}
+
+.btn-primary {
+    background-color: #ffc107;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #0e1b2b;
+    transform: scale(1.1);
+}
+
+.modal-content {
+    background: linear-gradient(45deg, #0e1b2b, #1c3048);
+    color: #fff;
+}
+
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+
+.signup-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffc107;
+    animation: heading-glow 3s ease-in-out infinite alternate;
+}
+
+
+@keyframes heading-glow {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.9); }
+    100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); }
+}
+
+
+.alert {
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+select.form-control {
+    height: auto;
+    padding: 10px;
+    color: #474747; 
+}
+
+.select-option {
+    color: #000; 
+}

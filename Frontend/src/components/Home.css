@@ -1,0 +1,164 @@
+body {
+  background: url('../assets/background.jpeg') no-repeat center center fixed; 
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 15%);
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  padding-top: 70px; 
+  margin: 0;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 3em;
+  color: #152e55;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5), 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #152e55;
+  margin-top: 20px;
+  height: 50px; 
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: #152e55;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { background-color: transparent; }
+  50% { background-color: #152e55; }
+}
+
+.animated-paragraph {
+  font-size: 1.5em;
+  text-align: center;
+  color: #152e55;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.col-md-4 {
+  flex: 1;
+  margin: 15px;
+  text-align: center;
+}
+
+.img-fluid {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-fluid:hover {
+  transform: scale(1.1);
+}
+
+.col-md-4 p {
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: #152e55;
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .img-fluid {
+    width: 80%;
+  }
+
+  .col-md-4 p {
+    font-size: 1em;
+  }
+}
+
+.home-container {
+  padding-top: 100px;
+}
+
+.metro-ticket-section {
+  background-color: rgba(255, 255, 255, 20%);
+  padding: 50px 15px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.metro-ticket-section h2 {
+  font-size: 2.5em;
+  color: #152e55;
+  margin-bottom: 20px;
+}
+
+.metro-description {
+  font-size: 1.2em;
+  color: #152e55;
+  margin-bottom: 30px;
+}
+
+.route-map-button {
+  background-color: #152e55;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.route-map-button:hover {
+  background-color: #0d1f3c;
+}
+
+.metro-map-img {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  animation: fadeIn 3s;
+}
+.metro-pic-img {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  animation: fadeIn 3s;
+  border: 3px outset #152c5588;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,213 @@
+/* General Container Styles */
+.user-profile-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: row;
+  background: url(/static/media/background.da0d705e.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  padding-left: 3%;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 80px;
+  min-width: 80px;
+  background: linear-gradient(45deg, #0e1b2b, #1c3048);
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  overflow: hidden;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin: auto 0;
+  transform: (1);
+  transition: transform .7s ease-in-out, width 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+}
+
+.sidebar:hover {
+  width: 220px;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.7);
+  transform: scale(1.09);
+  transition: transform .7s ease-in-out, width 0.5s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.sidebar .nav-item {
+  cursor: pointer;
+  padding: 1rem 0;
+  transition: color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.sidebar .nav-item i {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  transition: margin-right 0.3s;
+}
+
+.sidebar .nav-item span {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.3s;
+  overflow: hidden;
+}
+
+.sidebar:hover .nav-item span {
+  opacity: 1;
+}
+
+.sidebar .nav-item:hover {
+  color: #ffc107;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background: url(/static/media/background.da0d705e.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: margin-left 0.5s ease-in-out;
+}
+
+/* Table Container Styles */
+.table-container {
+  background: rgb(174, 173, 175);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 80%;
+  margin-top: 2rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.table-container:hover {
+  box-shadow: 0 0 20px rgba(37, 15, 56, 1);
+  transform: scale(1.05);
+}
+
+/* Table Styles */
+.table {
+  background: transparent;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.table th {
+  background-color: #0e1b2b;
+  color: #fff;
+}
+
+.table td {
+  background-color: #f8f9fa;
+}
+
+.table tr:hover td {
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+/* Alert Styles */
+.alert {
+  text-align: center;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alert:hover {
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+  transform: scale(1.05);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #ffc107;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #0e1b2b;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* Margin Bottom */
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+/* Form Control Styles */
+.form-control {
+  background-color:#fff;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #fffb00;
+  box-shadow: 0 10px 20px rgba(5, 42, 84, 0.5);
+  background-color: rgba(20, 37, 56, 1);
+  color: #fff;
+}
+
+/* Label Styles */
+label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+  transform: scale(1.05);
+}
+
+/* Additional keyframes for glowing effect */
+@keyframes sidebar-glow {
+  33% { background-color: #0e1b2b; box-shadow: 0 0 10px rgba(16, 48, 106, 0.35); }
+  66% { background-color: #02030f; box-shadow: 0 0 20px rgba(12, 11, 72, 0.7), 0 0 30px rgba(49, 44, 44, 0.9); }
+  100% { background-color: #1c3048; box-shadow: 0 0 10px rgba(41, 3, 136, 1); }
+}
+
+/* Apply the glow effect to the sidebar */
+.sidebar:hover {
+  animation: sidebar-glow 1.5s infinite;
+}
