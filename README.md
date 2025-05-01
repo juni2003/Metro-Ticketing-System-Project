@@ -45,8 +45,8 @@ cd client && npm install
 cd ../server && npm install
 ```
 3. **Configure Environment**
-Create .env files with these variables:
-**Server**
+- Create .env files with these variables:
+- **Server**
 ```bash
 MONGO_URI = your_mongodb_connection_string 
 JWT_SECRET = your_jwt_secret
@@ -54,7 +54,7 @@ PORT = 5000
 # Replace `your_mongodb_connection_string` and `your_jwt_secret` with actual values  
 
 ```
-**Client**
+- **Client**
 ```bash
 REACT_APP_API_URL = http://localhost:5000
 ```
@@ -82,3 +82,16 @@ cd ../client && npm start
 - 📱 Progressive Web App (PWA) support  
 - 🚌 Real-time metro tracking  
 - 📈 AI-driven demand prediction  
+## 🤝 Contribute  
+1. **Fork the repository**  
+2. **Create a feature branch**  
+```bash
+git checkout -b feature/your-idea
+```
+3. **Commit changes**  
+```bash
+git commit -m "Add your feature"
+```
+4. **Push and open a Pull Request**  
+## 🌟 Support the Project
+If this project helps you, consider giving it a star! ⭐
