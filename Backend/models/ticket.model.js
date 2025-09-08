@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 
 const ticketSchema = new mongoose.Schema({ 
     user_id: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
 },
 route_id: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Route',
     required: true
 },

@@ -154,25 +154,24 @@ const updateRoute = async (req, res) => {
 const addRouteStation = async (req, res) => {
   const { id } = req.params;
   const { stationName } = req.body;
-  const station = stationName;
 
   try {
     if (!id) {
       throw new Error("Invalid ID");
     }
-    const { stationName } = await Route.findById(id);
+    
+    const route = await Route.findById(id);
 
     if (!route) {
       throw new Error("Route not found");
     }
 
-    stationName.push(station);
-
-    route = await route.save();
+    route.stations.push(stationName);
+    const updatedRoute = await route.save();
 
     res.status(200).json({
       success: true,
-      route,
+      route: updatedRoute,
     });
   } catch (error) {
     res.status(404).json({

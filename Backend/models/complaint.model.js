@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const complaintSchema = new mongoose.Schema({
     user_id: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },

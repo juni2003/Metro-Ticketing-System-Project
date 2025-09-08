@@ -25,8 +25,8 @@ app.use((req, res, next) => {
 
 // Route
 app.use("/test", testRouter);
-app.use("/auth", user);
-app.use("/user", user);
+app.use("/auth", user);  // Authentication routes (login, signup, etc.)
+app.use("/user", user);  // User management routes (profile, history, etc.)
 app.use("/route", route);
 app.use("/ticketing", ticket);
 app.use("/complaint", complaint);
