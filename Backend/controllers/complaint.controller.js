@@ -26,7 +26,7 @@ const createComplaint = async (req, res) => {
 
 const getAllComplaints = async (req, res) => {
     try {
-        const complaints = await Complaint.find().populate('user_id route_id');
+        const complaints = await Complaint.find().populate('user_id');
 
         res.status(200).json({
             success: true,
@@ -48,7 +48,7 @@ const getComplaintById = async (req, res) => {
             throw new Error('Invalid ID');
         }
 
-        const complaint = await Complaint.findById(id).populate('user_id route_id');
+        const complaint = await Complaint.findById(id).populate('user_id');
 
         if (!complaint) {
             throw new Error('Complaint not found');

@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   createData,
   deleteData,
+  forgotPassword,
   getAllData,
   getSingleData,
   getTicketHistory,
@@ -25,6 +26,7 @@ router.delete("/delete-user/:id", deleteData);
 router.get("/ticket-history/:username", getTicketHistory);
 router.get("/search/:query", searchByAnyString);
 router.post("/login", loginUser);
+router.post("/forgot-password", forgotPassword);
 router.patch("/update-password/:username", updatePassword);
 router.patch('/update-email/:username', updateEmail);
 

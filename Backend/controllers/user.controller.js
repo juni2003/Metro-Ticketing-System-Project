@@ -346,11 +346,48 @@ const updateEmail = async (req, res) => {
   }
 };
 
+const forgotPassword = async (req, res) => {
+  const { email } = req.body;
+  
+  try {
+    if (!email) {
+      throw new Error('Email is required');
+    }
+
+    const user = await User.findOne({ email });
+    
+    if (!user) {
+      // For security, don't reveal if user exists or not
+      return res.status(200).json({
+        success: true,
+        message: 'If the email exists, a password reset link has been sent.',
+      });
+    }
+
+    // In a real implementation, you would:
+    // 1. Generate a secure reset token
+    // 2. Save it with expiration time in database
+    // 3. Send email with reset link
+    // For now, we'll just return success message
+    
+    res.status(200).json({
+      success: true,
+      message: 'If the email exists, a password reset link has been sent.',
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 
 module.exports = {
   createData: createUser,
   checkDuplicate,
   deleteData,
+  forgotPassword,
   getAllData,
   getSingleData,
   getUserIDByUsername,

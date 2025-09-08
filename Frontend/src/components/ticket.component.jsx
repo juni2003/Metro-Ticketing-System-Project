@@ -18,6 +18,8 @@ class Ticket extends Component {
       ticketData: null,
     };
 
+    // TODO: These route IDs are hardcoded and may not exist in the database
+    // Consider fetching routes dynamically from /route/get-all-route endpoint
     this.routes = [
       { id: '6654177487fa31463dc5c7b9', name: 'Route 1', price: 30 },
       { id: '66584584c17f66edcbeb61ef', name: 'Route 2', price: 50 },
