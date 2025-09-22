@@ -11,8 +11,7 @@ const routeSchema = new mongoose.Schema({
         required: true
     },
     stations: [{
-        type: [],
-        ref: 'Station'
+        type: String
     }]
 }, { timestamps: true })
 

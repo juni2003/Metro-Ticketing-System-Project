@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   createData,
   deleteData,
+  forgotPassword,
   getAllData,
   getSingleData,
   getTicketHistory,
@@ -12,7 +13,7 @@ const {
   loginUser,
   checkDuplicate,
   getUserIDByUsername,
-  updatePasswrod,
+  updatePassword,
   updateEmail} = require("../controllers/user.controller");
 
 router.post("/create-db", userTB);
@@ -25,7 +26,8 @@ router.delete("/delete-user/:id", deleteData);
 router.get("/ticket-history/:username", getTicketHistory);
 router.get("/search/:query", searchByAnyString);
 router.post("/login", loginUser);
-router.patch("/update-password/:username", updatePasswrod);
+router.post("/forgot-password", forgotPassword);
+router.patch("/update-password/:username", updatePassword);
 router.patch('/update-email/:username', updateEmail);
 
 module.exports = router;

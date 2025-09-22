@@ -18,10 +18,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    ticket_history:{
-        type: Array,
-        required: false
-    }
+    ticket_history:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Ticket'
+    }]
    }, {timestamps: true})
 
    

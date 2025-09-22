@@ -67,6 +67,16 @@ const updateData = async (req, res) => {
 
     const user = await User.findByIdAndUpdate(id, {
       ...req.body,
+    }, { new: true });
+
+    if (!user) {
+      throw new Error("User not found");
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "User updated successfully",
+      user,
     });
   } catch (error) {
     res.status(404).json({
@@ -79,15 +89,15 @@ const updateData = async (req, res) => {
 const deleteData = async (req, res) => {
   const { id } = req.params;
   try {
-    const test = await testModel.findOneAndDelete({ _id: id });
+    const user = await User.findOneAndDelete({ _id: id });
 
-    if (!test) {
-      throw new Error("Error deleting test data");
+    if (!user) {
+      throw new Error("Error deleting user data");
     }
 
     res.status(202).json({
       success: true,
-      message: "Test data deleted successfully",
+      message: "User data deleted successfully",
     });
   } catch (error) {
     res.status(404).json({
@@ -199,6 +209,7 @@ const searchByAnyString = async (req, res) => {
 
     res.status(200).json({
       success: true,
+      users,
     });
   } catch (error) {
     res.status(404).json({
@@ -212,10 +223,11 @@ const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
-    const username = user.username;
     if (!user) {
       return res.status(400).json({ message: "Invalid email or password" });
     }
+    
+    const username = user.username;
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
       return res.status(400).json({ message: "Invalid email or password" });
@@ -276,7 +288,7 @@ const getUserIDByUsername = async (req, res) => {
   }
 };
 
-const updatePasswrod = async (req, res) => {
+const updatePassword = async (req, res) => {
   const { username } = req.params;
   const { currentPassword, newPassword } = req.body;
 
@@ -334,11 +346,48 @@ const updateEmail = async (req, res) => {
   }
 };
 
+const forgotPassword = async (req, res) => {
+  const { email } = req.body;
+  
+  try {
+    if (!email) {
+      throw new Error('Email is required');
+    }
+
+    const user = await User.findOne({ email });
+    
+    if (!user) {
+      // For security, don't reveal if user exists or not
+      return res.status(200).json({
+        success: true,
+        message: 'If the email exists, a password reset link has been sent.',
+      });
+    }
+
+    // In a real implementation, you would:
+    // 1. Generate a secure reset token
+    // 2. Save it with expiration time in database
+    // 3. Send email with reset link
+    // For now, we'll just return success message
+    
+    res.status(200).json({
+      success: true,
+      message: 'If the email exists, a password reset link has been sent.',
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 
 module.exports = {
   createData: createUser,
   checkDuplicate,
   deleteData,
+  forgotPassword,
   getAllData,
   getSingleData,
   getUserIDByUsername,
@@ -348,5 +397,5 @@ module.exports = {
   userTB,
   updateData,
   updateEmail,
-  updatePasswrod,
+  updatePassword,
 };

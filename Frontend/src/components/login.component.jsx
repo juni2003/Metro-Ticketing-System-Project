@@ -41,7 +41,7 @@ export default class Login extends Component {
       if (response.status === 200) {
         this.setState({ success: 'Login successful!', showModal: true });
         localStorage.setItem('token', response.data.token);
-        localStorage.setItem('userName', response.data.userName);
+        localStorage.setItem('userName', response.data.username);
         this.props.onLogin(response.data.username);
       }
     } catch (error) {
